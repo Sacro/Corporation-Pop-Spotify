@@ -38,6 +38,9 @@ export class ConfigService {
       PORT: Joi.number()
         .default(3000)
         .optional(),
+
+      SPOTIFY_CLIENT_ID: Joi.string(),
+      SPOTIFY_CLIENT_SECRET: Joi.string(),
     }).options({
       presence: envConfig.NODE_ENV === 'test' ? 'optional' : 'required',
       stripUnknown: true,
@@ -69,5 +72,12 @@ export class ConfigService {
 
   get port() {
     return this.envConfig.PORT;
+  }
+
+  get spotify() {
+    return {
+      id: this.envConfig.SPOTIFY_CLIENT_ID,
+      secret: this.envConfig.SPOTIFY_CLIENT_SECRET,
+    };
   }
 }

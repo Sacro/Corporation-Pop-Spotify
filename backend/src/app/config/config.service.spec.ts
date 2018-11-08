@@ -50,5 +50,12 @@ describe('ConfigService', () => {
     it('should expose a port number', () => {
       expect(service.port).toBeNumber();
     });
+
+    it('should expose Spotify API configuration', () => {
+      expect(service.spotify).toMatchObject({
+        id: undefined,
+        secret: undefined,
+      });
+    });
   });
 });
