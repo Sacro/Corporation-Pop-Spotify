@@ -11,7 +11,7 @@ async function bootstrap() {
   const packageJson = require('../package.json');
 
   const options = new DocumentBuilder()
-    .setTitle('societies')
+    .setTitle('spotify')
     .setDescription(packageJson.description || 'API')
     .setLicense(packageJson.license || '', '')
     .setVersion(packageJson.version || '0.0.0')
