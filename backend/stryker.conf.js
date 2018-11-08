@@ -9,7 +9,6 @@ module.exports = function(config) {
     mutate: [
       'src/**/*.ts',
       '!src/main.ts',
-      '!src/main.hmr.ts',
       '!src/**/*.module.ts',
       '!src/**/*.spec.ts',
     ],
