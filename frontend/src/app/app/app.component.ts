@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,10 +9,22 @@ import { Component } from '@angular/core';
 export class AppComponent {
   isLoading: boolean;
   search: string;
+  type: string;
 
-  onSearchClicked() {
+  constructor(private http: HttpClient) {
+    this.type = 'artist';
+  }
+
+  async onSearchClicked() {
     if (this.search) {
-      console.log(this.search);
+      this.http
+        .get('http://localhost:3000/spotify/search', {
+          params: {
+            q: this.search,
+            type: this.type
+          }
+        })
+        .subscribe(data => console.log(data));
     }
   }
 }
