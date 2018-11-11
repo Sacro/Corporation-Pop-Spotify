@@ -1,0 +1,20 @@
+version: '3.6'
+
+services:
+  backend:
+    build:
+      context: backend
+      target: prebuild
+    restart: always
+    command: yarn run start:dev
+    env_file:
+      - backend/.env
+    ports:
+      - '3000:3000' # Nest HTTP port
+      - '9229:9229' # Node debug port
+    volumes:
+      - ./backend:/home/node/app
+      - backend-node-modules:/home/node/app/node_modules
+
+volumes:
+  backend-node-modules:
