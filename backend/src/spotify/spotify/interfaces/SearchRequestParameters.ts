@@ -1,6 +1,5 @@
 import { ApiModelProperty, ApiModelPropertyOptional } from '@nestjs/swagger';
 import { IsIn, IsNumberString, IsOptional, IsString } from 'class-validator';
-import { number } from 'joi';
 
 export enum searchType {
   album = 'album',
@@ -26,7 +25,6 @@ export class SearchRequestParameters {
   market?: string;
 
   @ApiModelPropertyOptional({
-    type: number,
     minimum: 1,
     default: 10,
     maximum: 50,
