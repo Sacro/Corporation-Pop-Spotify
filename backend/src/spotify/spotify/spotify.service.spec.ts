@@ -21,6 +21,12 @@ describe('SpotifyService', () => {
     expect(service).toBeDefined();
   });
 
+  describe('query', () => {
+    it('should be defined', () => {
+      expect(service.query).toBeDefined();
+    });
+  });
+
   describe('getAccessToken', () => {
     it('should be defined', () => {
       expect((service as any).getAccessToken).toBeDefined();
