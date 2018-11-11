@@ -13,9 +13,7 @@ import en from '@angular/common/locales/en';
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,4 +25,4 @@ registerLocaleData(en);
   providers: [{ provide: NZ_I18N, useValue: en_GB }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
