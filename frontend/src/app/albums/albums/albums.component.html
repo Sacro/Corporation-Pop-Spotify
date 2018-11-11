@@ -1,4 +1,12 @@
 <div *ngIf="!searchResults.albums">No Albums Found</div>
 <div *ngIf="searchResults.albums">
-  <div *ngFor="let result of searchResults.albums.items">{{ result }}</div>
+  <div
+    nz-row
+    nzType="flex"
+    nzGutter="{ xs: 8, sm: 16, md: 24, lg: 32, xl: 32, xxl: 32 }"
+  >
+    <div nz-col nzSpan="6" *ngFor="let result of searchResults.albums.items">
+      <app-album-item style="padding:10px" [album]="result"></app-album-item>
+    </div>
+  </div>
 </div>
