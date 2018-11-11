@@ -1,2 +1,2 @@
 export { AccessTokenResponse } from './AccessTokenResponse';
-export { SearchRequestParameters } from './SearchRequestParameters';
+export { SearchRequestParameters, searchType } from './SearchRequestParameters';

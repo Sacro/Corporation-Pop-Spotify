@@ -2,7 +2,7 @@ import { ApiModelProperty, ApiModelPropertyOptional } from '@nestjs/swagger';
 import { IsIn, IsNumberString, IsOptional, IsString } from 'class-validator';
 import { number } from 'joi';
 
-enum searchType {
+export enum searchType {
   album = 'album',
   artist = 'artist',
   playlist = 'playlist',
