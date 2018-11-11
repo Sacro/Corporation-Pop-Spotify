@@ -6,9 +6,6 @@ import { TracksComponent } from './tracks/tracks.component';
 
 @NgModule({
   declarations: [TracksComponent],
-  imports: [
-    CommonModule,
-    TracksRoutingModule
-  ]
+  imports: [CommonModule, TracksRoutingModule]
 })
-export class TracksModule { }
+export class TracksModule {}
