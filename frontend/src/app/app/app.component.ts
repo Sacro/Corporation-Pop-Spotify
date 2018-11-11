@@ -17,6 +17,7 @@ export class AppComponent {
 
   async onSearchClicked() {
     if (this.search) {
+      this.isLoading = true;
       this.http
         .get('http://localhost:3000/spotify/search', {
           params: {
@@ -24,7 +25,15 @@ export class AppComponent {
             type: this.type
           }
         })
-        .subscribe(data => console.log(data));
+        .subscribe(
+          data => {
+            this.isLoading = false;
+            console.log(data);
+          },
+          _error => {
+            this.isLoading = false;
+          }
+        );
     }
   }
 }
