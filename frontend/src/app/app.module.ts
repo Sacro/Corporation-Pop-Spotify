@@ -1,14 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import en from '@angular/common/locales/en';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { en_GB, NgZorroAntdModule, NZ_I18N } from 'ng-zorro-antd';
 
+import { AlbumsModule } from './albums/albums.module';
 import { AppRoutingModule } from './app/app-routing.module';
 import { AppComponent } from './app/app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { NgZorroAntdModule, NZ_I18N, en_GB } from 'ng-zorro-antd';
-import { registerLocaleData } from '@angular/common';
-import en from '@angular/common/locales/en';
+import { ArtistsModule } from './artists/artists.module';
+import { PlaylistsModule } from './playlists/playlists.module';
+import { TracksModule } from './tracks/tracks.module';
 
 registerLocaleData(en);
 
@@ -20,7 +24,11 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    AlbumsModule,
+    ArtistsModule,
+    PlaylistsModule,
+    TracksModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_GB }],
   bootstrap: [AppComponent]

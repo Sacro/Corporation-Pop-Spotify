@@ -10,10 +10,18 @@
         [nzMode]="'horizontal'"
         style="line-height: 64px;"
       >
-        <li nz-menu-item>Album</li>
-        <li nz-menu-item>Artist</li>
-        <li nz-menu-item>Playlist</li>
-        <li nz-menu-item>Track</li>
+        <li nz-menu-item routerLink="/albums" routerLinkActive="selected">
+          Albums
+        </li>
+        <li nz-menu-item routerLink="/artists" routerLinkActive="selected">
+          Artists
+        </li>
+        <li nz-menu-item routerLink="/playlists" routerLinkActive="selected">
+          Playlists
+        </li>
+        <li nz-menu-item routerLink="/tracks" routerLinkActive="selected">
+          Tracks
+        </li>
       </ul>
     </div>
     <div style="display:inline-block; padding-left:10px">
