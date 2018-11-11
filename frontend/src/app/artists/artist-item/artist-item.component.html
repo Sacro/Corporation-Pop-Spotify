@@ -1,0 +1,13 @@
+<nz-card style="width:250px;" [nzCover]="coverTemplate">
+  <nz-card-meta
+    nzTitle="{{artist.name}}"
+    nzDescription="{{artist.genres.join(', ')}}"
+  ></nz-card-meta>
+</nz-card>
+<ng-template #coverTemplate>
+  <img
+    alt="{{artist.name}}"
+    src="{{artist.images[2].url}}"
+    style="width:200px; height:200px;"
+  />
+</ng-template>

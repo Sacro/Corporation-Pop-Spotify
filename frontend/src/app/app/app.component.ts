@@ -13,6 +13,12 @@ export class AppComponent {
 
   constructor(private searchService: SearchService) {}
 
+  async onKeyDown(event) {
+    if (event.keyCode === 13) {
+      this.onSearchClicked();
+    }
+  }
+
   async onSearchClicked() {
     if (this.search) {
       this.isLoading = true;

@@ -1,7 +1,12 @@
 <nz-layout class="layout">
   <nz-header>
     <div style="display:inline-block; width: 300px">
-      <input nz-input placeholder="Search" [(ngModel)]="search" />
+      <input
+        nz-input
+        placeholder="Search"
+        [(ngModel)]="search"
+        (keydown)="onKeyDown($event)"
+      />
     </div>
     <div style="display:inline-block; padding-left:10px">
       <ul
