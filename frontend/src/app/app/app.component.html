@@ -1,4 +1,36 @@
-<!-- NG-ZORRO -->
-<a href="https://github.com/NG-ZORRO/ng-zorro-antd" target="_blank" style="display: flex;align-items: center;justify-content: center;height: 100%;width: 100%;">
-  <img height="300" src="https://img.alicdn.com/tfs/TB1NvvIwTtYBeNjy1XdXXXXyVXa-89-131.svg">
-</a>
+<nz-layout class="layout">
+  <nz-header>
+    <div style="display:inline-block; width: 300px">
+      <input nz-input placeholder="Search" [(ngModel)]="search" />
+    </div>
+    <div style="display:inline-block; padding-left:10px">
+      <ul
+        nz-menu
+        [nzTheme]="'dark'"
+        [nzMode]="'horizontal'"
+        style="line-height: 64px;"
+      >
+        <li nz-menu-item>Album</li>
+        <li nz-menu-item>Artist</li>
+        <li nz-menu-item>Playlist</li>
+        <li nz-menu-item>Track</li>
+      </ul>
+    </div>
+    <div style="display:inline-block; padding-left:10px">
+      <button
+        nz-button
+        nzType="default"
+        (click)="onSearchClicked()"
+        [nzLoading]="isLoading"
+      >
+        <i nz-icon type="search"></i>Search
+      </button>
+    </div>
+  </nz-header>
+  <nz-content style="padding:0 50px;">
+    <div style="background:#fff; padding: 24px; min-height: 280px;">
+      <router-outlet></router-outlet>
+    </div>
+  </nz-content>
+  <nz-footer style="text-align: center;">Ben Woodward 2018</nz-footer>
+</nz-layout>

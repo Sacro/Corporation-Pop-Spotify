@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'frontend';
+  isLoading: boolean;
+  search: string;
+
+  onSearchClicked() {
+    if (this.search) {
+      console.log(this.search);
+    }
+  }
 }
