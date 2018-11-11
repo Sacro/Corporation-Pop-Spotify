@@ -13,6 +13,7 @@ import { AppComponent } from './app/app.component';
 import { ArtistsModule } from './artists/artists.module';
 import { PlaylistsModule } from './playlists/playlists.module';
 import { TracksModule } from './tracks/tracks.module';
+import { SearchService } from './search/search.service';
 
 registerLocaleData(en);
 
@@ -30,7 +31,7 @@ registerLocaleData(en);
     PlaylistsModule,
     TracksModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_GB }],
+  providers: [{ provide: NZ_I18N, useValue: en_GB }, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

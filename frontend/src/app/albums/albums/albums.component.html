@@ -1,3 +1,4 @@
-<p>
-  albums works!
-</p>
+<div *ngIf="!searchResults.albums">No Albums Found</div>
+<div *ngIf="searchResults.albums">
+  <div *ngFor="let result of searchResults.albums.items">{{ result }}</div>
+</div>
